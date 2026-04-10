@@ -190,6 +190,10 @@
     background:transparent; border:1.5px solid rgba(253,245,234,.25); color:rgba(253,245,234,.8);
   }
   .btn-ghost:hover { border-color:var(--gold); color:var(--gold); transform:translateY(-2px); }
+  .btn-ghost-dark {
+    background:transparent; border:1.5px solid var(--warm-dark); color:var(--warm-dark);
+  }
+  .btn-ghost-dark:hover { border-color:var(--red); color:var(--red); transform:translateY(-2px); }
   .sp-icon { width:18px; height:18px; fill:currentColor; flex-shrink:0; }
 
   /* bottom warm border */
@@ -279,7 +283,7 @@
   .etag:hover { background:var(--red); color:#fff; transform:translateY(-2px); }
 
   /* Video stack */
-  .vid-stack { display:flex; flex-direction:column; gap:14px; }
+  .vid-stack { display:flex; flex-direction:column; gap:14px; max-width:50%; }
   .vid-wrap {
     position:relative; width:100%; padding-bottom:56.25%; border-radius:16px; overflow:hidden;
   }
@@ -557,7 +561,7 @@
     <p class="reveal d1">Catch gottsy behind the decks, in the studio, and mixing something special. Follow on Instagram and stream her original music on Spotify.</p>
   </div>
   <div class="follow-links">
-    <a href="https://www.instagram.com/iamgottsy/" target="_blank" rel="noopener" class="btn btn-ghost reveal d1">
+    <a href="https://www.instagram.com/iamgottsy/" target="_blank" rel="noopener" class="btn btn-ghost-dark reveal d1">
       @iamgottsy
     </a>
     <a href="https://open.spotify.com/artist/2P30CnCVzy8gHQeWqr9nMb?si=tCqqNGjbSAS9GHvnkOtXrg" target="_blank" rel="noopener" class="btn btn-red reveal d2">
