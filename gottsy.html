@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>gottsy — DJ · Los Angeles</title>
+<title>DJ gottsy — LA / SF based DJ for hire</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=Nunito:ital,wght@0,400;0,600;0,800;1,400;1,700&family=DM+Mono&display=swap" rel="stylesheet">
 <style>
@@ -278,37 +278,15 @@
   }
   .etag:hover { background:var(--red); color:#fff; transform:translateY(-2px); }
 
-  /* EQ card */
-  .eq-card {
-    background:#fff; border:2.5px solid var(--ink);
-    border-radius:24px; padding:2.8rem 2.2rem;
-    box-shadow:6px 6px 0 var(--warm-dark);
-    position:relative; overflow:hidden;
+  /* Video stack */
+  .vid-stack { display:flex; flex-direction:column; gap:14px; }
+  .vid-wrap {
+    position:relative; width:100%; padding-bottom:56.25%; border-radius:16px; overflow:hidden;
   }
-  .eq-card::before {
-    content:'';
-    position:absolute; inset:0;
-    background:linear-gradient(160deg, rgba(253,245,234,.8) 0%, rgba(245,232,208,.4) 100%);
-    pointer-events:none;
+  .vid-wrap iframe {
+    position:absolute; inset:0; width:100%; height:100%;
+    border:none;
   }
-  .eq-label {
-    font-family:'DM Mono', monospace; font-size:10px; letter-spacing:.3em;
-    text-transform:uppercase; color:var(--red);
-    margin-bottom:1.8rem; text-align:center; position:relative;
-  }
-  .eq-bars { display:flex; align-items:flex-end; gap:6px; height:85px; justify-content:center; position:relative; }
-  .eq-bar {
-    flex:1; max-width:24px; border-radius:4px 4px 0 0;
-    background:var(--bc, var(--red));
-    animation:eqBounce var(--ed,.8s) ease-in-out infinite alternate;
-    transform-origin:bottom;
-  }
-  .eq-footer {
-    margin-top:1.5rem; text-align:center;
-    font-family:'Fraunces', serif; font-style:italic; font-weight:300;
-    font-size:clamp(14px,1.7vw,18px); color:var(--ink); position:relative;
-  }
-  .eq-footer span { color:var(--red); font-style:normal; font-weight:700; }
 
   /* ══════════════════════════════════════════
      COCKTAIL
@@ -422,18 +400,17 @@
   .follow-left p {
     font-size:clamp(14px,1.5vw,17px); color:#7a4a32; line-height:1.75; max-width:400px;
   }
-  .follow-links { display:flex; flex-direction:column; gap:10px; min-width:280px; }
+  .follow-links { display:flex; flex-direction:row; flex-wrap:wrap; gap:14px; align-items:center; }
   .fl {
     display:flex; align-items:center; justify-content:space-between;
     padding:1.1rem 1.5rem; border-radius:16px;
     text-decoration:none; cursor:none;
     font-family:'Nunito', sans-serif; font-weight:800; font-size:clamp(16px,1.9vw,21px);
-    border:2.5px solid var(--ink);
-    transition:transform .2s, box-shadow .2s;
+    transition:transform .2s;
   }
-  .fl:hover { transform:translate(-3px,-3px); box-shadow:5px 5px 0 var(--warm-dark); }
-  .fl-ig { background:linear-gradient(135deg, #f09433,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888); color:#fff; box-shadow:3px 3px 0 var(--warm-dark); }
-  .fl-sp { background:#1DB954; color:#fff; box-shadow:3px 3px 0 var(--warm-dark); }
+  .fl:hover { transform:translate(-3px,-3px); }
+  .fl-ig { background:linear-gradient(135deg, #f09433,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888); color:#fff; }
+  .fl-sp { background:#1DB954; color:#fff; }
   .fl-inner { display:flex; align-items:center; gap:11px; }
   .fl-arr { font-size:18px; opacity:.75; }
 
@@ -479,14 +456,13 @@
   <span class="note n4">♬</span>
   <div class="vinyl"></div>
 
-  <p class="hero-eyebrow">DJ · Los Angeles</p>
-  <h1 class="hero-name">gottsy</h1>
-  <p class="hero-tagline">she reads the room like nobody else</p>
+  <p class="hero-eyebrow">LA / SF based DJ for hire</p>
+  <h1 class="hero-name">DJ gottsy</h1>
+  <p class="hero-tagline">your seamless party soundtrack<br><span style="font-size:.75em;opacity:.7;">creating the perfect soundtrack to turn moments into memories</span></p>
 
   <div class="hero-pills">
     <span class="pill pill-red">DJ for hire</span>
-    <span class="pill pill-gold">LA based</span>
-    <span class="pill pill-outline">artist &amp; songwriter</span>
+    <span class="pill pill-gold">LA / SF based</span>
   </div>
 
   <div class="hero-cta">
@@ -507,21 +483,17 @@
 <div class="marquee-wrap">
   <div class="marquee-track">
     <span class="mi">DJ for hire<span class="mi-dot"></span></span>
-    <span class="mi">reads the room<span class="mi-dot"></span></span>
-    <span class="mi">Los Angeles<span class="mi-dot"></span></span>
     <span class="mi">private events<span class="mi-dot"></span></span>
     <span class="mi">weddings<span class="mi-dot"></span></span>
     <span class="mi">parties<span class="mi-dot"></span></span>
     <span class="mi">corporate events<span class="mi-dot"></span></span>
-    <span class="mi">artist &amp; songwriter<span class="mi-dot"></span></span>
+    <span class="mi">LA / SF<span class="mi-dot"></span></span>
     <span class="mi">DJ for hire<span class="mi-dot"></span></span>
-    <span class="mi">reads the room<span class="mi-dot"></span></span>
-    <span class="mi">Los Angeles<span class="mi-dot"></span></span>
     <span class="mi">private events<span class="mi-dot"></span></span>
     <span class="mi">weddings<span class="mi-dot"></span></span>
     <span class="mi">parties<span class="mi-dot"></span></span>
     <span class="mi">corporate events<span class="mi-dot"></span></span>
-    <span class="mi">artist &amp; songwriter<span class="mi-dot"></span></span>
+    <span class="mi">LA / SF<span class="mi-dot"></span></span>
   </div>
 </div>
 
@@ -549,68 +521,21 @@
       </div>
     </div>
 
-    <div class="eq-card reveal d2">
-      <p class="eq-label">the gottsy effect</p>
-      <div class="eq-bars">
-        <div class="eq-bar" style="--bc:var(--wine);   --ed:.62s; animation-delay:0s;"></div>
-        <div class="eq-bar" style="--bc:var(--red);    --ed:.84s; animation-delay:.08s;"></div>
-        <div class="eq-bar" style="--bc:var(--auburn); --ed:.51s; animation-delay:.18s;"></div>
-        <div class="eq-bar" style="--bc:var(--copper); --ed:.93s; animation-delay:.04s;"></div>
-        <div class="eq-bar" style="--bc:var(--gold);   --ed:.71s; animation-delay:.14s;"></div>
-        <div class="eq-bar" style="--bc:var(--peach);  --ed:.56s; animation-delay:.24s;"></div>
-        <div class="eq-bar" style="--bc:var(--gold);   --ed:.87s; animation-delay:.10s;"></div>
-        <div class="eq-bar" style="--bc:var(--copper); --ed:.67s; animation-delay:.20s;"></div>
-        <div class="eq-bar" style="--bc:var(--red);    --ed:.77s; animation-delay:.30s;"></div>
-        <div class="eq-bar" style="--bc:var(--wine);   --ed:.49s; animation-delay:.12s;"></div>
+    <div class="vid-stack reveal d2">
+      <div class="vid-wrap">
+        <iframe src="https://www.youtube.com/embed/p9Jc-S1g1oU" title="gottsy video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      <p class="eq-footer">crowd goes from restless → <span>euphoric</span></p>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══ COCKTAIL ══════════════════════════════ -->
-<section class="cocktail">
-  <div class="cocktail-grid">
-
-    <div>
-      <p class="sec-eyebrow reveal" style="color:var(--peach);">
-        <span class="sec-eyebrow-dot" style="background:var(--peach);"></span>beyond the decks
-      </p>
-      <h2 class="cocktail-h reveal d1">she also makes<br>your <em>perfect drink.</em></h2>
-      <p class="cocktail-p reveal d2">
-        Off the decks, gottsy is obsessed with custom cocktails. She has the same uncanny gift she has with music — reading exactly what someone needs and delivering it. A smoky mezcal situation, something bright and citrusy, or something you'd never have ordered yourself but can't imagine not having.
-      </p>
-      <p class="cocktail-p reveal d2">Same instinct. Different glass.</p>
-      <p class="cocktail-line reveal d3">music for your ears · <em>cocktails for your soul</em></p>
-    </div>
-
-    <div class="cards">
-      <div class="card reveal d1">
-        <div class="card-icon">🎧</div>
-        <div class="card-body">
-          <h4>the track</h4>
-          <p>reads the room and drops exactly what the moment needs — every time</p>
-        </div>
+      <div class="vid-wrap">
+        <iframe src="https://www.youtube.com/embed/obotIV_my4g" title="gottsy video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      <div class="card reveal d2">
-        <div class="card-icon">🍹</div>
-        <div class="card-body">
-          <h4>the drink</h4>
-          <p>reads you and builds a cocktail that's perfectly, personally yours</p>
-        </div>
-      </div>
-      <div class="card reveal d3">
-        <div class="card-icon">✨</div>
-        <div class="card-body">
-          <h4>the instinct</h4>
-          <p>same superpower — knowing what you need before you do</p>
-        </div>
+      <div class="vid-wrap">
+        <iframe src="https://www.youtube.com/embed/QdIsZHMMppg" title="gottsy video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
 
   </div>
 </section>
+
 
 <!-- ══ BOOKING ═══════════════════════════════ -->
 <section class="booking">
@@ -632,16 +557,12 @@
     <p class="reveal d1">Catch gottsy behind the decks, in the studio, and mixing something special. Follow on Instagram and stream her original music on Spotify.</p>
   </div>
   <div class="follow-links">
-    <a href="https://www.instagram.com/iamgottsy/" target="_blank" rel="noopener" class="fl fl-ig reveal d1">
-      <div class="fl-inner"><span style="font-size:1.3rem">📸</span><span>@iamgottsy</span></div>
-      <span class="fl-arr">↗</span>
+    <a href="https://www.instagram.com/iamgottsy/" target="_blank" rel="noopener" class="btn btn-ghost reveal d1">
+      @iamgottsy
     </a>
-    <a href="https://open.spotify.com/artist/2P30CnCVzy8gHQeWqr9nMb?si=tCqqNGjbSAS9GHvnkOtXrg" target="_blank" rel="noopener" class="fl fl-sp reveal d2">
-      <div class="fl-inner">
-        <svg style="width:20px;height:20px;fill:white;flex-shrink:0;" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-        <span>gottsy on Spotify</span>
-      </div>
-      <span class="fl-arr">↗</span>
+    <a href="https://open.spotify.com/artist/2P30CnCVzy8gHQeWqr9nMb?si=tCqqNGjbSAS9GHvnkOtXrg" target="_blank" rel="noopener" class="btn btn-red reveal d2">
+      <svg class="sp-icon" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+      Hear gottsy on Spotify
     </a>
   </div>
 </section>
