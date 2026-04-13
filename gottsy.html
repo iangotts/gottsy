@@ -287,20 +287,25 @@
     position:absolute; inset:0; width:100%; height:100%;
     border:none;
   }
-  .yt-thumb {
+  .yt-facade {
     display:block; position:relative; width:100%; border-radius:16px; overflow:hidden;
-    cursor:none; box-shadow:0 8px 32px rgba(0,0,0,.25);
+    cursor:pointer; box-shadow:0 8px 32px rgba(0,0,0,.25);
     transition:transform .25s, box-shadow .25s;
   }
-  .yt-thumb:hover { transform:translateY(-4px); box-shadow:0 16px 48px rgba(0,0,0,.35); }
-  .yt-thumb img { width:100%; height:100%; object-fit:cover; display:block; aspect-ratio:16/9; }
+  .yt-facade:hover { transform:translateY(-4px); box-shadow:0 16px 48px rgba(0,0,0,.35); }
+  .yt-facade img { width:100%; height:100%; object-fit:cover; display:block; aspect-ratio:16/9; }
   .yt-play {
     position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
     background:rgba(0,0,0,.18); transition:background .2s;
   }
-  .yt-thumb:hover .yt-play { background:rgba(0,0,0,.08); }
+  .yt-facade:hover .yt-play { background:rgba(0,0,0,.08); }
   .yt-play svg { width:68px; height:48px; filter:drop-shadow(0 2px 8px rgba(0,0,0,.4)); transition:transform .2s; }
-  .yt-thumb:hover .yt-play svg { transform:scale(1.1); }
+  .yt-facade:hover .yt-play svg { transform:scale(1.1); }
+  .yt-iframe-wrap {
+    position:relative; width:100%; padding-bottom:56.25%; border-radius:16px; overflow:hidden;
+    box-shadow:0 8px 32px rgba(0,0,0,.25);
+  }
+  .yt-iframe-wrap iframe { position:absolute; inset:0; width:100%; height:100%; border:none; }
 
   /* ══════════════════════════════════════════
      COCKTAIL
@@ -536,12 +541,12 @@
     </div>
 
     <div class="vid-stack reveal d2">
-      <a href="https://youtu.be/EBwzGKUqdH0" target="_blank" rel="noopener" class="yt-thumb">
-        <img src="https://img.youtube.com/vi/EBwzGKUqdH0/maxresdefault.jpg" alt="Watch gottsy on YouTube" onerror="this.src='https://img.youtube.com/vi/EBwzGKUqdH0/hqdefault.jpg'">
+      <div class="yt-facade" id="yt-facade" onclick="loadYT()">
+        <img src="https://img.youtube.com/vi/EBwzGKUqdH0/maxresdefault.jpg" alt="Watch gottsy" onerror="this.src='https://img.youtube.com/vi/EBwzGKUqdH0/hqdefault.jpg'">
         <div class="yt-play">
           <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C0 13.05 0 24 0 24s0 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C68 34.95 68 24 68 24s0-10.95-1.48-16.26z" fill="#ff0000"/><path d="M45 24 27 14v20" fill="#fff"/></svg>
         </div>
-      </a>
+      </div>
     </div>
 
   </div>
@@ -603,6 +608,15 @@
     { threshold: 0.12 }
   );
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+  // youtube click-to-play
+  function loadYT() {
+    const facade = document.getElementById('yt-facade');
+    const wrap = document.createElement('div');
+    wrap.className = 'yt-iframe-wrap';
+    wrap.innerHTML = '<iframe src="https://www.youtube.com/embed/EBwzGKUqdH0?si=CP-dk-qt_queVTNt&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+    facade.replaceWith(wrap);
+  }
 </script>
 </body>
 </html>
